@@ -22,9 +22,13 @@ If you were using the default Firebase configuration, just fill in the signer ke
 5. Click on the Generate new private key button (Node.js is the default option, so you can just click Generate Key)
 6. Save the file to the root of this repository and name it `service-account-key.json`
 
+### 1.3. Add all the user json files to the `data` folder
+Add all the user json files that were exported by the [Backup Users to Cloud Storage extension](https://extensions.dev/extensions/50fifty/auth-scheduled-backup) to the `data` folder.
+
 ## 2. Running the script
 1. Clone this repository
 2. Run `npm install`
 3. Edit the `index.ts` file as described in the pre-requisites
 4. Download and place the service account key in the root of this project as described in the pre-requisites
-5. Run `npm run start`
+5. Add all the user json files to the `data` folder as described in the pre-requisites
+6. Run `npm run start`
