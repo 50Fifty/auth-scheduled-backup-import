@@ -25,6 +25,8 @@ If you were using the default Firebase configuration, just fill in the signer ke
 ### 1.3. Add all the user json files to the `data` folder
 Add all the user json files that were exported by the [Backup Users to Cloud Storage extension](https://extensions.dev/extensions/50fifty/auth-scheduled-backup) to the `data` folder.
 
+Do not add the `manifest.json` file to the `data` folder.
+
 ## 2. Running the script
 1. Clone this repository
 2. Run `npm install`
