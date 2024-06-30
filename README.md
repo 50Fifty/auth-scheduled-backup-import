@@ -7,14 +7,14 @@ This script is to backup the Firebase users that were exported by the [Backup Us
 > [!IMPORTANT] 
 > This script is requires the following pre-requisites to be set up before running the script.
 
-### Edit the `index.ts` file
-Edit the `hash` parameter in the `importUsers` method in the `index.ts` file to match the key and salt separator that was used in your Firebase project.
+### 1.1. Edit the `index.ts` file
+Edit the `hash` parameter in the `importUsers` method in the `index.ts` file to match the key and salt separator that was used in your Firebase project. 
+
+Use the signer key and salt separator from the Firebase Console under Firebase Authentication -> Users -> Click on the three dots -> password hash parameters.
 
 If you were using the default Firebase configuration, just fill in the signer key and salt separator. If you used a custom configuration, see this [Firebase documentation](https://firebase.google.com/docs/auth/admin/import-users) for more information.
 
-Use the signer key and salt separator from the Firebase Console under Firebase Authentication -> Users -> Click on the three dots -> password hash parameters
-
-### Download the service account key from your Firebase project
+### 1.2. Download the service account key from your Firebase project
 1. Go to the Firebase Console
 2. Click on the gear icon next to Project Overview
 3. Click on Project Settings
