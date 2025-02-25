@@ -30,7 +30,7 @@ const importUserChunk = async (chunk: UserImportRecord[]) => {
           // Use the signer key and salt separator from the Firebase Console under Firebase Authentication -> Users -> Click on the three dots -> password hash parameters
           algorithm: 'SCRYPT',
           key: Buffer.from('<base64-signer-key>', 'base64'),
-          saltSeparator: Buffer.from('base64-salt-separator', 'base64'),
+          saltSeparator: Buffer.from('<base64-salt-separator>', 'base64'),
           rounds: 8,
           memoryCost: 14,
         },
