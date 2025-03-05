@@ -47,11 +47,18 @@ const importUserChunk = async (chunk: UserImportRecord[]) => {
 
 const importUsersFromFile = async (filePath: string) => {
   const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const users: UserImportRecord[] = JSON.parse(fileContent).map((user: any) => ({
-    ...user,
-    passwordHash: Buffer.from(user.passwordHash, 'base64'),
-    passwordSalt: Buffer.from(user.passwordSalt, 'base64'),
-  }));
+  const users: UserImportRecord[] = JSON.parse(fileContent).map(
+    (user: any) => {
+      const userData: UserImportRecord = { ...user };
+      if (user.passwordHash) {
+        userData.passwordHash = Buffer.from(user.passwordHash, "base64");
+      }
+      if (user.passwordSalt) {
+        userData.passwordSalt = Buffer.from(user.passwordSalt, "base64");
+      }
+      return userData;
+    }
+  );
 
   const userChunks = chunkArray(users, 1000);
   for (const chunk of userChunks) {
